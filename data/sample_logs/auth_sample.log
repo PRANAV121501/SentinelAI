@@ -1,0 +1,8 @@
+Oct  4 12:00:01 server sshd[1234]: Accepted publickey for ubuntu from 192.168.1.10 port 52312 ssh2
+Oct  4 12:01:10 server sshd[1238]: Failed password for invalid user admin from 203.0.113.45 port 39281 ssh2
+Oct  4 12:01:12 server sshd[1240]: Failed password for invalid user root from 203.0.113.45 port 39282 ssh2
+Oct  4 12:01:15 server sshd[1242]: Failed password for invalid user test from 203.0.113.45 port 39283 ssh2
+Oct  4 12:01:17 server sshd[1245]: Failed password for invalid user oracle from 203.0.113.45 port 39284 ssh2
+Oct  4 12:01:20 server sshd[1248]: Failed password for invalid user postgres from 203.0.113.45 port 39285 ssh2
+Oct  4 12:01:22 server sshd[1250]: Failed password for invalid user user from 203.0.113.45 port 39286 ssh2
+Oct  4 12:05:00 server sshd[1260]: Accepted password for deploy from 192.168.1.50 port 49100 ssh2
