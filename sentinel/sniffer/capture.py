@@ -2,7 +2,8 @@ import random
 import time
 from datetime import datetime
 from typing import Callable, Optional, Generator
-from aegis.sniffer.protocol import PacketEvent
+import sys
+from sentinel.sniffer.protocol import PacketEvent
 
 # Attempt to import scapy; if Npcap is missing or user lacks permissions, fallback gracefully
 try:

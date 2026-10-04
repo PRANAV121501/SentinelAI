@@ -1,8 +1,8 @@
 import re
 from datetime import datetime
 from typing import List, Generator, Tuple
-from aegis.rules.signatures import ThreatDetector
-from aegis.sniffer.protocol import SecurityAlert
+from sentinel.rules.signatures import ThreatDetector
+from sentinel.sniffer.protocol import SecurityAlert
 
 # Matches standard Linux sshd failed password messages:
 # "Failed password for invalid user admin from 192.168.1.100 port 45122 ssh2"

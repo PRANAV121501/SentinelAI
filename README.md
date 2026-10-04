@@ -1,4 +1,4 @@
-# 🛡️ AegisNet: Autonomous Threat Detection & Incident Response Platform
+# 🛡️ SentinelAI: Autonomous Threat Detection & Incident Response Platform
 
 > **4-Year Flagship Engineering Project (B.Tech CSE - AI/ML)**  
 > *A modular, evolving cybersecurity intelligence system scaling from low-level network packet analysis to distributed multi-agent autonomous security operations.*
@@ -7,7 +7,7 @@
 
 ## 📌 Executive Summary
 
-Modern cybersecurity threats (zero-days, automated port reconnaissance, DDoS, and credential stuffing) operate at machine speed. **AegisNet** is designed as a multi-tier Security Information and Event Management (SIEM) and Intrusion Detection System (IDS).
+Modern cybersecurity threats (zero-days, automated port reconnaissance, DDoS, and credential stuffing) operate at machine speed. **SentinelAI** is designed as a multi-tier Security Information and Event Management (SIEM) and Intrusion Detection System (IDS).
 
 It is structured to evolve across all 4 years of an undergraduate engineering degree, incrementally integrating:
 - **Computer Networking & Systems** (Year 1)
@@ -46,7 +46,7 @@ It is structured to evolve across all 4 years of an undergraduate engineering de
 
 ```text
 Project-1/
-├── aegis/                          # Core Python Engine
+├── sentinel/                       # Core Python Engine
 │   ├── __init__.py
 │   ├── cli.py                      # Interactive Command Line Interface
 │   ├── sniffer/
@@ -96,7 +96,7 @@ pip install -r requirements.txt
 
 ### 3. Verify Version & Diagnostics
 ```powershell
-python -m aegis.cli version
+python -m sentinel.cli version
 ```
 
 ### 4. Run Threat Simulation (No Admin/Root Needed)
@@ -104,23 +104,23 @@ Test real-time packet inspection and sliding-window heuristic detection:
 
 * **Simulate a Port Scan Attack:**
   ```powershell
-  python -m aegis.cli simulate-attack --type port_scan --count 30
+  python -m sentinel.cli simulate-attack --type port_scan --count 30
   ```
 
 * **Simulate a SYN Flood (DoS) Attack:**
   ```powershell
-  python -m aegis.cli simulate-attack --type syn_flood --count 40
+  python -m sentinel.cli simulate-attack --type syn_flood --count 40
   ```
 
 * **Export Alerts to JSON:**
   ```powershell
-  python -m aegis.cli simulate-attack --type port_scan --export alerts.json
+  python -m sentinel.cli simulate-attack --type port_scan --export alerts.json
   ```
 
 ### 5. Parse Authentication Logs for Brute Force
 Analyze system logs for password-guessing attacks:
 ```powershell
-python -m aegis.cli parse-logs data/sample_logs/auth_sample.log --export alerts.json
+python -m sentinel.cli parse-logs data/sample_logs/auth_sample.log --export alerts.json
 ```
 
 ### 6. Run Unit Tests

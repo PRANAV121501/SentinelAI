@@ -7,23 +7,23 @@ if sys.platform.startswith("win") and hasattr(sys.stdout, "reconfigure"):
         sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
-from aegis import __version__
-from aegis.storage.reporter import (
+from sentinel import __version__
+from sentinel.storage.reporter import (
     print_banner,
     display_packet,
     display_alert,
     export_alerts_to_json,
     console
 )
-from aegis.sniffer.protocol import PacketEvent
-from aegis.sniffer.capture import start_live_capture, generate_synthetic_traffic, SCAPY_AVAILABLE
-from aegis.rules.signatures import ThreatDetector
-from aegis.parsers.auth_log import analyze_log_file
+from sentinel.sniffer.protocol import PacketEvent
+from sentinel.sniffer.capture import start_live_capture, generate_synthetic_traffic, SCAPY_AVAILABLE
+from sentinel.rules.signatures import ThreatDetector
+from sentinel.parsers.auth_log import analyze_log_file
 
 
 @click.group()
 def cli():
-    """AegisNet: Autonomous Threat Detection & Incident Response Platform."""
+    """SentinelAI: Autonomous Threat Detection & Incident Response Platform."""
     pass
 
 
@@ -31,7 +31,7 @@ def cli():
 def version():
     """Display platform version and security engine status."""
     print_banner()
-    console.print(f"[bold green]AegisNet Version:[/bold green] {__version__}")
+    console.print(f"[bold green]SentinelAI Version:[/bold green] {__version__}")
     console.print(f"[bold cyan]Scapy Sniffer Status:[/bold cyan] {'Available' if SCAPY_AVAILABLE else 'Npcap/RawSocket not configured'}")
     console.print("[dim]Phase: Year 1 Foundations (Packet Analyzer & Heuristic Rule Engine)[/dim]\n")
 
@@ -63,7 +63,7 @@ def sniff(interface, bpf_filter, count):
     except Exception as e:
         console.print(f"\n[bold red]Capture error:[/bold red] {e}")
         console.print("[yellow]Tip: Live raw packet capture often requires Administrator/root privileges or Npcap installed on Windows.[/yellow]")
-        console.print("[cyan]You can run 'python -m aegis.cli simulate-attack' to test the detection engine with synthetic traffic.[/cyan]")
+        console.print("[cyan]You can run 'python -m sentinel.cli simulate-attack' to test the detection engine with synthetic traffic.[/cyan]")
 
 
 @cli.command()

@@ -1,7 +1,7 @@
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List, Dict, Set, Optional
-from aegis.sniffer.protocol import PacketEvent, SecurityAlert
+from sentinel.sniffer.protocol import PacketEvent, SecurityAlert
 
 
 class ThreatDetector:

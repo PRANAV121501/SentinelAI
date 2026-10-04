@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-from aegis.sniffer.protocol import PacketEvent
-from aegis.rules.signatures import ThreatDetector
+from sentinel.sniffer.protocol import PacketEvent
+from sentinel.rules.signatures import ThreatDetector
 
 
 def test_port_scan_detection():

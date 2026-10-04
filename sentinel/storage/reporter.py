@@ -6,7 +6,7 @@ from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
 from rich.text import Text
-from aegis.sniffer.protocol import PacketEvent, SecurityAlert
+from sentinel.sniffer.protocol import PacketEvent, SecurityAlert
 
 # Ensure UTF-8 output on Windows terminals
 if sys.platform.startswith("win") and hasattr(sys.stdout, "reconfigure"):
@@ -22,12 +22,11 @@ console = Console(highlight=False)
 def print_banner():
     banner = Text(
         r"""
-    ___     ______ _____ _____  _____ _   _ _____ _____ 
-   / _ \   |  ____/ ____|_   _|/ ____| \ | |  ___|_   _|
-  / /_\ \  | |__ | |  __  | | | (___ |  \| | |__   | |  
-  |  _  |  |  __|| | |_ | | |  \___ \| . ` |  __|  | |  
-  | | | |  | |___| |__| |_| |_ ____) | |\  | |___  | |  
-  \_| |_/  |______\_____|_____|_____/|_| \_|_____/ |_|  
+  ____  _____ _   _ _____ ___ _   _ _____ _        _    ___ 
+ / ___|| ____| \ | |_   _|_ _| \ | | ____| |      / \  |_ _|
+ \___ \|  _| |  \| | | |  | ||  \| |  _| | |     / _ \  | | 
+  ___) | |___| |\  | | |  | || |\  | |___| |___ / ___ \ | | 
+ |____/|_____|_| \_| |_| |___|_| \_|_____|_____/_/   \_\___|
         Autonomous Threat Detection Platform (v0.1.0)
         """,
         style="bold cyan"
