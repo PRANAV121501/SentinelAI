@@ -1,0 +1,99 @@
+================================================================================
+                    SENTINEL AI - HOW TO RUN GUIDE
+================================================================================
+
+This guide contains all the commands you need to run, test, and develop
+SentinelAI on your Windows machine.
+
+--------------------------------------------------------------------------------
+1. OPEN POWERSHELL / TERMINAL
+--------------------------------------------------------------------------------
+Open PowerShell and navigate to your project directory:
+
+    cd "C:\Users\prana\OneDrive\Desktop\Project-1"
+
+
+--------------------------------------------------------------------------------
+2. ACTIVATE THE VIRTUAL ENVIRONMENT
+--------------------------------------------------------------------------------
+Run the activation script:
+
+    .\.venv\Scripts\Activate.ps1
+
+Once activated, you will see (.venv) at the start of your command prompt.
+
+*TIP: If PowerShell shows an Execution Policy restriction error, run:
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+Or simply run commands using the venv Python directly:
+    .\.venv\Scripts\python -m sentinel.cli [command]
+
+
+--------------------------------------------------------------------------------
+3. RUNNING COMMANDS
+--------------------------------------------------------------------------------
+
+A) CHECK STATUS & VERSION:
+   View the system banner and see if network sniffers are active:
+
+       python -m sentinel.cli version
+
+
+B) SIMULATE A PORT SCAN ATTACK (High Severity):
+   Generates a live stream of network packets and flags reconnaissance scans:
+
+       python -m sentinel.cli simulate-attack --type port_scan --count 30
+
+   With custom delay (slower or faster streaming):
+       python -m sentinel.cli simulate-attack --type port_scan --count 40 --interval 0.02
+
+
+C) SIMULATE A TCP SYN FLOOD (Critical Severity - DoS Attack):
+   Simulates rapid TCP connection floods and triggers a DoS alert:
+
+       python -m sentinel.cli simulate-attack --type syn_flood --count 40
+
+
+D) SIMULATE NORMAL BASELINE TRAFFIC:
+   Streams standard benign network traffic (No alerts will be triggered):
+
+       python -m sentinel.cli simulate-attack --type normal --count 25
+
+
+E) EXPORT ALERTS TO A JSON FILE:
+   Save any detected incidents to a structured JSON report:
+
+       python -m sentinel.cli simulate-attack --type port_scan --export alerts.json
+
+
+F) ANALYZE AUTHENTICATION LOGS (Brute Force Detection):
+   Reads system/SSH authentication logs to detect password guessing attempts:
+
+       python -m sentinel.cli parse-logs data/sample_logs/auth_sample.log --export alerts.json
+
+
+G) RUN UNIT TESTS:
+   Runs all automated test suites to ensure the detection engine is working:
+
+       pytest
+
+
+H) LIVE NETWORK SNIFFING (Optional - Requires Admin/Npcap):
+   Capture raw network packets on your Wi-Fi or Ethernet card:
+
+       python -m sentinel.cli sniff --count 50
+
+
+--------------------------------------------------------------------------------
+4. HOW TO PUSH FUTURE CHANGES TO GITHUB
+--------------------------------------------------------------------------------
+Whenever you write new code or add features:
+
+    git status
+    git add .
+    git commit -m "feat: description of what you added"
+    git push
+
+Your repository URL:
+https://github.com/PRANAV121501/SentinelAI
+
+================================================================================
